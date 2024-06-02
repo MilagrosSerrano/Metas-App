@@ -1,0 +1,6 @@
+.vinculo{
+    @apply flex p-2 items-center text-violet-500;
+}
+.icons{
+    @apply h-xl mr-1;
+}

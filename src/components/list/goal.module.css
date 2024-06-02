@@ -1,0 +1,19 @@
+.tarjetaGoal{
+    @apply flex p-4 m-6 rounded-xl border-violet-600 border-solid border text-white justify-between;
+}
+
+.icon{
+    @apply rounded-full w-11 shadow-icon shadow-violet-500 p-2 ml-2 text-center text-xl;
+}
+
+.mainBar{
+    @apply h-2 w-36 mt-1 rounded-2xl border border-solid border-green-200 shadow-sm shadow-green-200;
+}
+
+.progressBar{
+    @apply h-full rounded-2xl bg-green-400;
+}
+
+.completed{
+    @apply  h-10 flex items-center text-sm rounded-full border-solid border-blue-600 shadow-2xl shadow-blue-600 bg-transparent border-2 p-3 ml-10 hover:bg-blue-500 hover:border-blue-500 hover:scale-105;
+}
