@@ -3,6 +3,7 @@ import checklist from '../../icons/tasklist-gradient-96x96.png';
 import add from '../../icons/add-gradient-96x96.png';
 import estilos from './main.module.css';
 import List from '../list/list';
+import Details from '../new/details';
 
 function Main({children}) {
     return (
@@ -12,7 +13,8 @@ function Main({children}) {
           <Link link='/nuevaMeta' text='Nueva Meta' icon={add}></Link>
         </aside>
         <main className={estilos.main}>
-          <List></List>
+        {/*   <List></List> */}
+        <Details></Details>
         </main>
       </div>
     );

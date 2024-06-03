@@ -3,7 +3,7 @@ import estilos from './goal.module.css';
 
 function Goal({icon,freq,cant,description,completed,goal,deadLine}) {
     return(
-        <div className={estilos.tarjetaGoal}>
+        <div className='tarjetaGoal'>
             <div className='flex  items-center'>
                 <div className={estilos.icon}>{icon}</div>
                 <p className='ml-10 mr-10 text-2xl'>{cant}<sub>/{freq}</sub></p>
@@ -17,7 +17,7 @@ function Goal({icon,freq,cant,description,completed,goal,deadLine}) {
                     </div>
                 </div>
                 <div>
-                    <button className={estilos.completed}>Completado</button>
+                    <button className='btn btn--blue'>Completado</button>
                 </div>
             </div>
         </div>
