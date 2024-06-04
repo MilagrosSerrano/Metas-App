@@ -1,11 +1,10 @@
-import Link from './link';
+import Link from './linked';
 import checklist from '../../icons/tasklist-gradient-96x96.png';
 import add from '../../icons/add-gradient-96x96.png';
 import estilos from './main.module.css';
-import List from '../list/list';
-import Details from '../new/details';
+import { Outlet } from "react-router-dom";
 
-function Main({children}) {
+function Main() {
     return (
       <div className={estilos.container}> 
         <aside className={estilos.aside}>
@@ -13,8 +12,7 @@ function Main({children}) {
           <Link link='/nuevaMeta' text='Nueva Meta' icon={add}></Link>
         </aside>
         <main className={estilos.main}>
-        {/*   <List></List> */}
-        <Details></Details>
+        <Outlet></Outlet>
         </main>
       </div>
     );

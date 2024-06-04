@@ -17,7 +17,7 @@ function Goal({icon,freq,cant,description,completed,goal,deadLine}) {
                     </div>
                 </div>
                 <div>
-                    <button className='btn btn--blue'>Completado</button>
+                    <button className='btn btn--blue ml-6'>Completado</button>
                 </div>
             </div>
         </div>

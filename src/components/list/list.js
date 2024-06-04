@@ -10,7 +10,7 @@ const listaMock = [{
     description: 'Correr 10 kilómetros.',
     completed: 20,
     goal: 365,
-    deadLine: '2024-31-12'
+    deadLine: '2024-12-31'
 },
 {
     id: '2',
@@ -20,7 +20,7 @@ const listaMock = [{
     description: 'Hacer todas las comidas diarias.',
     completed: 0,
     goal: 365,
-    deadLine: '2024-31-12'
+    deadLine: '2024-12-31'
 },
 {
     id: '3',
@@ -30,7 +30,7 @@ const listaMock = [{
     description: 'Leer libros.',
     completed: 1,
     goal: 12,
-    deadLine: '2024-31-12'
+    deadLine: '2024-12-31'
 },
 {
     id: '4',
@@ -40,13 +40,13 @@ const listaMock = [{
     description: 'Tomar unas vacaciones.',
     completed: 0,
     goal: 1,
-    deadLine: '2024-31-12'
+    deadLine: '2024-12-31'
 }
 ];
  
 function List(){
     return(
-        listaMock.map(meta => <Goal {...meta} key={meta}></Goal>)
+        listaMock.map(meta => <Goal {...meta} key={meta.id}></Goal>)
     )
 }
 
