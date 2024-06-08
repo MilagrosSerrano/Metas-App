@@ -4,6 +4,7 @@ import HomePage from '../index/homePage';
 import ErrorPage from './errorPage';
 import List from '../list/list';
 import Details from '../new/details';
+import ModalForm from "../shared/modalForm";
 
 export const router = createBrowserRouter([
     {
@@ -17,12 +18,18 @@ export const router = createBrowserRouter([
         },
         {
           path:'/lista',
-          element:<List></List>
+          element:<List></List>,
+          children:[
+            {
+              path:'/lista/:id',
+              element:<ModalForm> <Details></Details> </ModalForm>
+            },
+          ]
         },
         {
           path:'/nuevaMeta',
           element:<Details></Details>
-        }
+        },
       ],
     }
   

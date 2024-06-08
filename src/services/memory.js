@@ -1,11 +1,10 @@
 import { createContext, useReducer } from "react";
-import Emoji from '../components/shared/emoji';
 
 export const Contexto = createContext(null);
 
 const listaMock = [{
     id: '1',
-    icon: <Emoji symbol='🏃🏽‍♂️'></Emoji>,
+    icon: '🏃🏽‍♂️',
     freq: 'dia',
     cant: 2,
     description: 'Correr 10 kilómetros.',
@@ -15,7 +14,7 @@ const listaMock = [{
 },
 {
     id: '2',
-    icon: <Emoji symbol='🍽️'></Emoji>,
+    icon: '🍽️',
     freq: 'dia',
     cant: 4,
     description: 'Hacer todas las comidas diarias.',
@@ -25,7 +24,7 @@ const listaMock = [{
 },
 {
     id: '3',
-    icon: <Emoji symbol='📚'></Emoji>,
+    icon: '📚',
     freq: 'mes',
     cant: 1,
     description: 'Leer libros.',
@@ -35,7 +34,7 @@ const listaMock = [{
 },
 {
     id: '4',
-    icon: <Emoji symbol='✈️'></Emoji>,
+    icon: '✈️',
     freq: 'año',
     cant: 1,
     description: 'Tomar unas vacaciones.',
@@ -47,8 +46,9 @@ const listaMock = [{
 
 const initialState= {
     orden: [],
-    objectos: {}
+    objetos: {}
 }
+
 function reductor(estado, accion) {
     switch (accion.type) {
       case 'add': {
@@ -60,12 +60,21 @@ function reductor(estado, accion) {
             {}
           ),
         };
-        // localStorage.setItem('metas', JSON.stringify(nuevoEstado))
         return nuevoEstado;
-      }
+        }
+      case 'create': {
+        const id = Math.random();
+        const nuevoEstado = {
+          orden: [...estado.orden, id],
+          objetos: {
+            ...estado.objetos, [id]: accion.meta
+          }
+        };
+        return nuevoEstado;
 
+        }
     }
-}
+};
 
 const metas = (reductor(initialState, { type: 'add', meta: listaMock }));
 
