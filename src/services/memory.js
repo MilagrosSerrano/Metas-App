@@ -61,7 +61,7 @@ function reductor(estado, accion) {
           ),
         };
         return nuevoEstado;
-        }
+      }
       case 'create': {
         const id = Math.random();
         const nuevoEstado = {
@@ -72,7 +72,29 @@ function reductor(estado, accion) {
         };
         return nuevoEstado;
 
-        }
+      }
+      case 'update': {
+        const id = accion.meta.id;
+        estado.objetos[id] = {
+          ...estado.objetos[id],
+          ...accion.meta
+        };
+        const nuevoEstado = {...estado};
+        return nuevoEstado;
+
+      }
+      case 'deleted': {
+        const id = accion.id;
+        const newStates = {...estado.objetos};
+        delete newStates[id];
+        const newOrden = estado.orden.filter((item) => ((item) !== (id)));
+        const nuevoEstado = {
+          orden: newOrden,
+          objetos: newStates,
+        };
+        return nuevoEstado;
+
+      }
     }
 };
 

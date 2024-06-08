@@ -42,12 +42,22 @@ function Details() {
 
     const navigate = useNavigate();
 
-    const create = async () => {
+    const create = () => {
         dispatch({ type: 'create', meta: form });
         navigate('/lista');
     }
 
+    const update = () =>{
+        dispatch({ type: 'update', meta: form });
+        navigate('/lista');
+    }
+
     const cancel = () => {
+        navigate('/lista');
+    }
+
+    const deleted = () =>{
+        dispatch({ type: 'deleted', id });
         navigate('/lista');
     }
 
@@ -61,8 +71,11 @@ function Details() {
                 </span>
                 <div className='flex justify-around'>
                     <input className='input' type='number' value={cant} onChange={e => onChange(e, 'cant')} />
-                    <select className='input' value={freq} onChange={e => onChange(e, 'freq')}>
-                        {frequency.map((frequence) => (<option key={frequence} className='bg-gray-900'>{frequence}</option>))}
+                    <select className='input' value={freq} onChange={e => onChange(e,'freq')}>   
+                    {frequency.map((opcion) => 
+                    (<option className=' bg-gray-900' key={opcion} value={opcion}>
+                        {opcion}
+                    </option>))}
                     </select>
                 </div>
             </label>
@@ -82,8 +95,20 @@ function Details() {
                 </select>
             </label>
             <div className='flex justify-between mt-9'>
-                <button className='btn btn--red' onClick={cancel}>Cancelar</button>
+                {(!id) && 
                 <button className='btn btn--blue' onClick={create} >Crear</button>
+                }
+                {(!id) && 
+                <button className='btn btn--red' onClick={cancel}>Cancelar</button>
+                }
+                {(id) &&
+                 <button className='btn btn--blue' onClick={cancel}>Cancelar</button>
+                }
+                {(id) &&
+                 <button className='btn btn--red' onClick={deleted}>Borrar</button>
+                }
+                {(id) && <button className='btn btn--blue' onClick={update} >Actualizar</button>}
+                
             </div>
         </form>
     );

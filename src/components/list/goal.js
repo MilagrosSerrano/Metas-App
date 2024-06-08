@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import estilos from './goal.module.css';
 
-
 function Goal({id,icon,freq,cant,description,completed,goal}) {
     return(
         <Link to={id} className='tarjetaGoal'>
