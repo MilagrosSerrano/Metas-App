@@ -5,6 +5,7 @@ import ErrorPage from './errorPage';
 import List from '../list/list';
 import Details from '../new/details';
 import ModalForm from "../shared/modalForm";
+import Tutorial from "../index/tutorial";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
           path:'/lista',
           element:<List></List>,
           children:[
+            {
+              path:'/lista/example',
+              element:<Tutorial></Tutorial>
+            },
             {
               path:'/lista/:id',
               element:<ModalForm> <Details></Details> </ModalForm>

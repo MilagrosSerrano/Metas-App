@@ -2,52 +2,14 @@ import { createContext, useReducer } from "react";
 
 export const Contexto = createContext(null);
 
-const listaMock = [{
-    id: '1',
-    icon: '🏃🏽‍♂️',
-    freq: 'dia',
-    cant: 2,
-    description: 'Correr 10 kilómetros.',
-    completed: 20,
-    goal: 365,
-    deadLine: '2024-12-31'
-},
-{
-    id: '2',
-    icon: '🍽️',
-    freq: 'dia',
-    cant: 4,
-    description: 'Hacer todas las comidas diarias.',
-    completed: 0,
-    goal: 365,
-    deadLine: '2024-12-31'
-},
-{
-    id: '3',
-    icon: '📚',
-    freq: 'mes',
-    cant: 1,
-    description: 'Leer libros.',
-    completed: 1,
-    goal: 12,
-    deadLine: '2024-12-31'
-},
-{
-    id: '4',
-    icon: '✈️',
-    freq: 'año',
-    cant: 1,
-    description: 'Tomar unas vacaciones.',
-    completed: 0,
-    goal: 1,
-    deadLine: '2024-12-31'
-}
-];
+const memory = localStorage.getItem('goals');
 
-const initialState= {
+const initialState = memory
+  ? JSON.parse(memory)
+  : {
     orden: [],
     objetos: {}
-}
+  };
 
 function reductor(estado, accion) {
     switch (accion.type) {
@@ -60,16 +22,18 @@ function reductor(estado, accion) {
             {}
           ),
         };
+        localStorage.setItem('goals', JSON.stringify(nuevoEstado));
         return nuevoEstado;
       }
       case 'create': {
-        const id = Math.random();
+        const id = estado.orden.length+1;
         const nuevoEstado = {
-          orden: [...estado.orden, id],
+          orden: [...estado.orden, JSON.stringify(id)],
           objetos: {
-            ...estado.objetos, [id]: accion.meta
+            ...estado.objetos, [id]: {...accion.meta , id: JSON.stringify(id)}
           }
         };
+        localStorage.setItem('goals', JSON.stringify(nuevoEstado));
         return nuevoEstado;
 
       }
@@ -80,6 +44,7 @@ function reductor(estado, accion) {
           ...accion.meta
         };
         const nuevoEstado = {...estado};
+        localStorage.setItem('goals', JSON.stringify(nuevoEstado));
         return nuevoEstado;
 
       }
@@ -92,16 +57,16 @@ function reductor(estado, accion) {
           orden: newOrden,
           objetos: newStates,
         };
+        localStorage.setItem('goals', JSON.stringify(nuevoEstado));
         return nuevoEstado;
 
       }
     }
 };
 
-const metas = (reductor(initialState, { type: 'add', meta: listaMock }));
 
 function Memory({ children }) {
-    const [state, dispatch] = useReducer(reductor, metas);
+    const [state, dispatch] = useReducer(reductor, initialState);
     return (
         <Contexto.Provider value={[state, dispatch]}>
             {children}

@@ -7,11 +7,11 @@
 }
 
 .form{
-    @apply flex flex-col h-5/6 p-4 m-8 rounded-2xl border-blue-500 border-solid border-2 shadow-blue-500 shadow-md text-white;
+    @apply flex flex-col p-4 m-8 rounded-2xl border-blue-500 border-solid border-2 shadow-blue-500 shadow-md text-white;
 }
 
 .input{
-    @apply bg-transparent p-1 pl-2 mt-1 m-1 w-full rounded-xl border-gray-600 border-solid border;
+    @apply bg-transparent p-1 pl-2 mt-1 m-1 w-full rounded-xl border-gray-600 border-solid border-2 outline-none;
 }
 
 .label{
@@ -19,7 +19,7 @@
 } 
 
 .btn{
-    @apply  h-10 flex items-center text-sm rounded-full p-3 border-solid shadow-2xl bg-transparent border-2 hover:scale-105;
+    @apply  h-10 flex items-center text-sm rounded-full p-3 mb-1 border-solid shadow-2xl bg-transparent border-2 hover:scale-105;
 }
 
 .btn--blue{
