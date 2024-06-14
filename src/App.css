@@ -18,6 +18,10 @@
     @apply flex flex-col mb-4;
 } 
 
+.inputAlert{
+    @apply  bg-red-700 w-fit p-1 m-1 ml-2 border-none rounded-md text-sm;
+}
+
 .btn{
     @apply  h-10 flex items-center text-sm rounded-full p-3 mb-1 border-solid shadow-2xl bg-transparent border-2 hover:scale-105;
 }
