@@ -5,7 +5,7 @@ import Footer from './components/shared/footer';
 
 function App() {
   return (
-    <div className=' w-screen'>
+    <div className=' w-full'>
       <Header></Header>
       <Main></Main>
       <Footer></Footer>
