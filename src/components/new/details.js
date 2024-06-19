@@ -22,7 +22,7 @@ function Details() {
     const { icon, freq, cant, description, completed, goal, deadLine } = form;
 
     const frequency = ['Seleccione la frecuencia', 'día', 'semana', 'mes', 'año',];
-    const emojis = ['Seleccione el ícono', '🍽️', '🏃🏽‍♂️', '📚', '✈️'];
+    const emojis = ['Seleccione el ícono','🏃🏽‍♂️','🏃🏽‍♀️','🏊🏼','🏄🏽‍♀️','🚴🏼‍♂️','🧘🏽‍♂️','⚽','🥎','🎮','🎨','🎵','💻','📷','📝','📈','📅','💰','💳','🍽️','🍼','🍻','🧼','🛒','🎉','📚','✈️','🛠️'];
 
 
 
@@ -63,18 +63,36 @@ function Details() {
                 goalRef.current.style.borderColor = 'red'
             }
         }
-        
-        if (prop === 'deadLine'){
-            const dateExample = RegExp(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/); 
-            if (dateExample.test((event.target.value))){
+
+
+        if (prop === 'deadLine') {
+            const dateExample = RegExp(/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/);
+            if (dateExample.test((event.target.value))) {
                 deadLineRef.current.style.borderColor = 'green'
             }
-            else{
+            else {
                 deadLineRef.current.style.borderColor = 'red'
             }
-            console.log((event.target.value).toLocaleString());
-            console.log(dateExample.test((event.target.value)));
         }
+
+        if (prop === 'completed') {
+            if ((event.target.value.trim().length > 0) && (event.target.value > 0) && ((event.target.value) < goal)) {
+                completedRef.current.style.borderColor = 'green'
+            }
+            else {
+                completedRef.current.style.borderColor = 'red'
+            }
+        }
+
+        if (prop === 'icon') {
+            if ((event.target.value) === 'Seleccione el ícono') {
+                iconRef.current.style.borderColor = 'red'
+            }
+            else {
+                iconRef.current.style.borderColor = 'green'
+            }
+        }
+
 
     }
 
@@ -82,7 +100,7 @@ function Details() {
 
 
     function onBlur(e) {
-        setIsBlur(true);
+        setIsBlur(true); 
     }
 
     const [state, dispatch] = useContext(Contexto);
@@ -105,7 +123,7 @@ function Details() {
     const deadLineRef = useRef();
     const completedRef = useRef();
     const iconRef = useRef();
-    
+
     const navigate = useNavigate();
 
 
@@ -173,7 +191,7 @@ function Details() {
             isValid = false;
         }
 
-        if (icon=== '') {
+        if (icon === '') {
             iconRef.current.focus();
             iconRef.current.style.borderColor = 'red';
             isValid = false;
@@ -187,17 +205,27 @@ function Details() {
     return (
         <>
             <form className='form bg-gray-900'>
-                {/*  <label id='completar' className='mb-3'>¡Por favor complete todos los campos!</label> */}
+                <label id='completar' onBlur={e => onBlur(e)}>
+                    <div className='flex justify-end'>
+                        {isBlur &&
+                            ((description.length < 6) ||
+                                (cant === '') ||
+                                (freq === '') ||
+                                (goal === '') ||
+                                (deadLine === '') ||
+                                (completed === '') ||
+                                (icon === '')) &&
+                            <p className='inputAlert'>¡Por favor complete todos los campos!</p>}
+                    </div>
+                </label>
 
-                <label className='label' onBlur={e => onBlur(e)}>
+                <label className='label'>
                     <div className='flex items-center'>
                         Describe tu meta
-                        {isBlur && (description.length < 6) && <p className='inputAlert'>Ingrese una descripción de al menos 6 letras.</p>}
-
                     </div>
-                    <input placeholder='ej. 52 caminatas' ref={descRef} className='input' value={description} onChange={e => onChange(e, 'description')}  required minLength={5} />
+                    <input placeholder='ej. 52 caminatas' ref={descRef} className='input' value={description} onChange={e => onChange(e, 'description')} onBlur={e => onBlur(e)} required minLength={5} />
                 </label>
-                <label className='label'> ¿Con qué frecuencia deseas cumplir tu meta?
+                <label className='label' onBlur={e => onBlur(e)} > ¿Con qué frecuencia deseas cumplir tu meta?
                     <span className='text-gray-500'> (ej. 1 vez a la semana)
                     </span>
                     <div className='flex justify-around'>
@@ -211,16 +239,16 @@ function Details() {
                     </div>
                 </label>
                 <label className='label'>¿Cuántas veces deseas completar esta meta?
-                    <input className='input' type='number' ref={goalRef} value={goal} onChange={e => onChange(e, 'goal')} required />
+                    <input className='input' type='number' ref={goalRef} value={goal} onChange={e => onChange(e, 'goal')} onBlur={e => onBlur(e)} required />
                 </label>
                 <label className='label'>Ingresa una fecha límite
-                    <input className='input' type='date' ref={deadLineRef} value={deadLine} onChange={e => onChange(e, 'deadLine')} required />
+                    <input className='input' type='date' ref={deadLineRef} value={deadLine} onChange={e => onChange(e, 'deadLine')} onBlur={e => onBlur(e)} required />
                 </label>
                 <label className='label'>¿Cuántas veces haz completado esta meta?
-                    <input className='input' value={completed}  ref={completedRef} onChange={e => onChange(e, 'completed')} required></input>
+                    <input className='input' type='number' value={completed} ref={completedRef} onChange={e => onChange(e, 'completed')}  onBlur={e => onBlur(e)} required></input>
                 </label>
                 <label className='label'> Escoge el ícono para la meta
-                    <select className='input' ref={iconRef} value={icon} onChange={e => onChange(e, 'icon')} required>   {emojis.map((emoji) =>
+                    <select className='input' ref={iconRef} value={icon} onChange={e => onChange(e, 'icon')} onBlur={e => onBlur(e)} required>   {emojis.map((emoji) =>
                         (<option value={emoji} key={emoji} required >{emoji}</option>)
                     )}
                     </select>

@@ -2,5 +2,5 @@
     @apply flex p-2 items-center text-purple-200;
 }
 .icons{
-    @apply h-xl mr-1;
+    @apply h-8 mr-1;
 }

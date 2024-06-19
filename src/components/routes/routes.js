@@ -7,7 +7,6 @@ import Details from '../new/details';
 import ModalForm from "../shared/modalForm";
 import Tutorial from "../index/tutorial";
 import DeleteItem from "../new/deleteItem";
-
 export const router = createBrowserRouter([
     {
       path: '/' ,
@@ -32,11 +31,15 @@ export const router = createBrowserRouter([
               children:[
                 {
                   path:'/lista/:id/deleted',
-                  element: <ModalForm> <DeleteItem></DeleteItem> </ModalForm> ,
-                }
+                  element: <ModalForm> <DeleteItem title='delete'></DeleteItem> </ModalForm> ,
+                },
+                
               ]
+            },
+            {
+                  path:'/lista/:id/completed',
+                  element: <DeleteItem title='complete'></DeleteItem>
             }
-            
           ]
         },
         {
