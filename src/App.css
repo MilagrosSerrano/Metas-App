@@ -7,15 +7,15 @@
 }
 
 .form{
-    @apply flex flex-col inset-0 p-4 m-8 mt-14 rounded-2xl border-blue-500 border-solid border-2 shadow-blue-500 shadow-md text-white;
+    @apply flex flex-col inset-0 p-3 m-6 rounded-2xl border-blue-500 border-solid border-2 shadow-blue-500 shadow-md text-white;
 }
 
 .input{
-    @apply bg-transparent p-1 pl-2 mt-1 m-1 w-full rounded-xl border-gray-600 border-solid border-2 outline-none;
+    @apply bg-transparent p-1 pl-2 mt-1 m-1 w-full h-8 rounded-xl text-sm border-gray-600 border-solid border-2 outline-none md:text-lg;
 }
 
 .label{
-    @apply flex flex-col mb-4;
+    @apply flex flex-col mb-2 md:mb-4;
 } 
 
 .inputAlert{
