@@ -254,7 +254,7 @@ function Details() {
                     )}
                     </select>
                 </label>
-                <div className='flex justify-between mt-9'>                   
+                <div className='flex justify-between mt-8'>                   
                     {(!id) &&
                         <button className='btn btn--red' onClick={cancel}>Cancelar</button>
                     }
