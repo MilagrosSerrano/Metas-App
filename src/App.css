@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .tarjetaGoal{
-    @apply flex p-2 m-6 w-auto rounded-xl border-violet-600 border-solid border text-white justify-between text-sm md:p-4;
+    @apply flex p-2 m-6 w-screen rounded-xl border-violet-600 border-solid border text-white justify-between text-sm md:p-4;
 }
 
 .form{
