@@ -3,7 +3,7 @@
             w-9 p-1 md:ml-2 text-lg;
 }
 .cant{
-    @apply ml-1 mr-1 text-sm 
+    @apply ml-2 mr-1 text-sm 
            md:ml-10 md:mr-10 md:text-2xl;
 }
 .description{
