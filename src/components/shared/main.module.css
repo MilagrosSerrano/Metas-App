@@ -4,5 +4,5 @@
 }
 
 .main{
-    @apply w-full h-full bg-gray-900 overflow-hidden;
+    @apply w-full h-full p-6 bg-gray-900 overflow-hidden;
 }
