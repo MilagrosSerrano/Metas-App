@@ -5,11 +5,11 @@ import Footer from './components/shared/footer';
 
 function App() {
   return (
-    <>
+    <div className=' w-screen'>
       <Header></Header>
       <Main></Main>
       <Footer></Footer>
-    </>
+    </div>
   );
 }
 

@@ -243,7 +243,7 @@ function Details() {
                     <input className='input' type='number' ref={goalRef} value={goal} onChange={e => onChange(e, 'goal')} onBlur={e => onBlur(e)} required />
                 </label>
                 <label className='label'>Ingresa una fecha límite
-                    <input className='input' type='date' ref={deadLineRef} value={deadLine} onChange={e => onChange(e, 'deadLine')} onBlur={e => onBlur(e)} required />
+                    <input className='input h-2' type='date' ref={deadLineRef} value={deadLine} onChange={e => onChange(e, 'deadLine')} onBlur={e => onBlur(e)} required />
                 </label>
                 <label className='label'>¿Cuántas veces haz completado esta meta?
                     <input className='input' type='number' value={completed} ref={completedRef} onChange={e => onChange(e, 'completed')}  onBlur={e => onBlur(e)} required></input>
