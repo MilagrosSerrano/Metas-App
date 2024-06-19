@@ -1,12 +1,12 @@
 import Goal from './goal';
-import { useContext, useEffect } from 'react';
+import { useContext} from 'react';
 import { Contexto } from '../../services/memory';
 import { Outlet} from 'react-router-dom';
 
 
 
 function List() {
-    const [state, dispatch] = useContext(Contexto);
+    const [state] = useContext(Contexto);
     return (
         <>
             {state.orden.map(value => 

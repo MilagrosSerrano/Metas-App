@@ -60,6 +60,7 @@ function reductor(estado, accion) {
         localStorage.setItem('goals', JSON.stringify(nuevoEstado));
         return nuevoEstado;
       }
+      default: throw Error;
     }
 };
 
