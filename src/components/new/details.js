@@ -146,7 +146,8 @@ function Details() {
         navigate('/lista');
     }
 
-    const deleted = () => {
+    const deleted = (e) => {
+        e.preventDefault();
         navigate(`/lista/${id}/deleted`);
     }
 
@@ -253,15 +254,15 @@ function Details() {
                     )}
                     </select>
                 </label>
-                <div className='flex justify-between mt-9'>
-                    {(!id) &&
-                        <button className='btn btn--blue' onClick={create} >Crear</button>
-                    }
+                <div className='flex justify-between mt-9'>                   
                     {(!id) &&
                         <button className='btn btn--red' onClick={cancel}>Cancelar</button>
                     }
                     {(id) &&
                         <button className='btn btn--blue' onClick={cancel}>Cancelar</button>
+                    }
+                     {(!id) &&
+                        <button className='btn btn--blue' onClick={create} >Crear</button>
                     }
                     {(id) &&
                         <button className='btn btn--red' onClick={deleted}>Borrar</button>

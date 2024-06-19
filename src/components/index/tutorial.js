@@ -3,7 +3,7 @@ import Goal from "../list/goal";
 function Tutorial() {
     return (
         <div className=" p-6 md:p-8 mt-2 w-full">
-            <div className="description p-2 m-2 md:m-8 md:p-4 text-purple-100 md:w-2/3 mx-auto">
+            <div className="description p-2 m-2 md:m-8 md:p-6 text-purple-100 md:w-full mx-auto">
                 <h2 className="text-center text-3xl mb-4">Crea la meta que mejor se adapte a tus necesidades.</h2>
                 <p className="text-center text-md">Lleva un control de todas tus tareas, una manera más simple de organizar tu vida.</p>
             </div>
