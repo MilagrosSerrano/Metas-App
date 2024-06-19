@@ -19,7 +19,7 @@ function Goal({ id, icon, freq, cant, description, completed, goal }) {
                 <p className={estilos.description}>{description}</p>
             </div>
             <div className='flex text-center items-center w-3/5 2xl:w-1/3'>
-                <div className='flex flex-col w-full'>
+                <div className='flex flex-col w-full ml-2'>
                     <p>{completed} de {goal}</p>
                     <div className={estilos.mainBar}>
                         <div style={{ width: `${Math.round((completed / goal) * 100)}%` }} className={estilos.progressBar}></div>
