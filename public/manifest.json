@@ -1,21 +1,4 @@
 {
   "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "../src/icons/fire-gradient-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "../src/icons/fire-gradient-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "../src/icons/fire-gradient-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    }
-  ]
+  "name": "Create React App Sample"
 }

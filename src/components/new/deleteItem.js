@@ -44,7 +44,7 @@ function DeleteItem({title}) {
 
     return (
         <div className="flex items-center fixed inset-0 bg-gray-700 bg-opacity-25 text-center text-white">
-            <div className='border-blue-500 border-2 rounded-xl bg-gray-900 mx-auto w-1/4 p-4'>
+            <div className='border-blue-500 border-2 rounded-xl bg-gray-900 mx-auto md:w-1/4 p-4'>
                 <h1>{functionTitle}</h1>
                 <div className="buttons flex p-2 justify-center ">
                     <button className={btn1} onClick={volver} > Volver </button>

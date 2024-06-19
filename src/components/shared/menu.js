@@ -22,7 +22,7 @@ export default function Menu({isOpen, setIsOpen}) {
   }
   if (isOpen) {
     return (
-      <nav className='w-64 h-svh pt-12 p-2 bg-gray-800 rounded-l-lg' onClick={() => closeNav()}>
+      <nav className=' w-1/2 h-svh pt-12 p-2 bg-gray-800 rounded-l-lg sm:w-1/3 md:w-1/4' onClick={() => closeNav()}>
         <Linked link={listLink} text={'Lista de Metas'} icon={checklist}></Linked>
         <Linked link='/nuevaMeta' text={'Nueva Meta'} icon={add}></Linked>
       </nav>

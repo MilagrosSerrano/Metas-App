@@ -11,8 +11,6 @@ function Header() {
   
   const [isOpen,setIsOpen] = useState(false);
   
-  console.log(isOpen)
-  
   let navIcon = '';
 
   if (isOpen){

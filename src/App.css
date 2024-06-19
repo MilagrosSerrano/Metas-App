@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .tarjetaGoal{
-    @apply flex p-4 m-6 rounded-xl border-violet-600 border-solid border text-white justify-between;
+    @apply flex p-2 m-6 w-auto rounded-xl border-violet-600 border-solid border text-white justify-between text-sm md:p-4;
 }
 
 .form{
-    @apply flex flex-col p-4 m-8 rounded-2xl border-blue-500 border-solid border-2 shadow-blue-500 shadow-md text-white;
+    @apply flex flex-col inset-0 p-4 m-6 rounded-2xl border-blue-500 border-solid border-2 shadow-blue-500 shadow-md text-white;
 }
 
 .input{
