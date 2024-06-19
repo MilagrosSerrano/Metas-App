@@ -1,6 +1,6 @@
 .icon{
     @apply  rounded-full shadow-icon shadow-violet-500 text-center
-            w-12 p-1 md:ml-2 text-xl;
+            w-12 p-2 md:ml-2 text-xl;
 }
 .cant{
     @apply ml-1 mr-1 text-sm 
