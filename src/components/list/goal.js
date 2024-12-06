@@ -12,7 +12,7 @@ function Goal({ id, icon, freq, cant, description, completed, goal }) {
     }
 
     return (
-        <Link to={id} className='tarjetaGoal '>
+        <Link to={id} className='tarjetaGoal'>
             <div className='flex items-center w-1/2 md:w-full'>
                 <div className={estilos.icon}>{icon}</div>
                 <p className={estilos.cant}>{cant}<sub>/{freq}</sub></p>
