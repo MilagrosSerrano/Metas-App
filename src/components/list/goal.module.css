@@ -20,4 +20,41 @@
     @apply h-9 flex items-center text-xs rounded-full p-2 mb-1 border-solid shadow-2xl bg-transparent border-2 hover:scale-105 border-blue-600 shadow-blue-600 hover:bg-blue-500 hover:border-blue-500
     md:p-3 md:mr-8;
 }
+@media (max-width:1030px){
+    .cant{
+        @apply mx-2
+    }
+    .description{
+        @apply text-base mx-2
+    }
+    .mainBar{
+        @apply w-24
+    }
+    .completed{
+        @apply mx-2
+    }
+}
 
+@media (max-width:800px){
+    .description{
+        @apply text-sm mx-2
+    }
+    .cant, .completed, .progressBar{
+        @apply p-1 m-0 text-sm
+    }
+}
+
+@media (max-width: 480px){
+    .description{
+        @apply text-xs mx-2
+    }
+    .cant{
+        @apply text-xs m-0
+    }
+    .completed, .progressBar, .mainBar{
+        @apply text-xs
+    }
+    .completed:nth-last-child(1){
+        @apply hidden
+    }
+}

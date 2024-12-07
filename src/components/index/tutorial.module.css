@@ -1,0 +1,19 @@
+.container{
+    @apply py-4 px-0 mt-2 w-full flex flex-col items-center gap-8
+}
+
+.goals{
+    @apply flex flex-col border-blue-500 border-2 p-6 px-12 md:m-8 rounded-2xl w-4/5 gap-3
+}
+
+@media (max-width:740px){
+    .goals{
+         @apply p-2 px-2 w-full
+    }
+}
+
+@media (max-width:470px){
+    .container{
+        @apply text-sm
+    }
+}
