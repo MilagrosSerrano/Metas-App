@@ -1,6 +1,6 @@
 .container{
     height: calc(100vh);
-   @apply flex overflow-scroll scroll-auto;
+   @apply flex overflow-scroll scroll-auto overflow-y-auto;
 }
 
 .main{
